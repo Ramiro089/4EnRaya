@@ -173,6 +173,7 @@ while 1 > 0:
     else:
         f=2
     SoltarFichaEnColumna(f,c,tablero,secuencia)
+    os.system('cls')
     tablero = dibujarTablero(completarTableroEnOrden(secuencia, tableroVacio()))
     ganador(tablero)
     
