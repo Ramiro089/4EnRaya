@@ -161,7 +161,7 @@ def diagonal(tablero):
         
 
 tablero = tableroVacio()
-secuencia = [1, 2, 3, 1]
+secuencia = []
 i=0
 c=0
 f=0
