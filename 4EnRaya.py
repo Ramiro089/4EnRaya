@@ -163,7 +163,6 @@ def diagonal(tablero):
     j=4
     i=0
     while j >= 3:
-        print(i)
         if tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i+1] and tablero[j][i] == tablero[j-2][i+2] and tablero[j][i] == tablero[j3][i+3]:
             print("Gano el Jugador " + str(tablero[j][i])) 
             sys.exit()
