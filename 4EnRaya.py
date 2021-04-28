@@ -1,6 +1,14 @@
 import os
 import sys
 
+# Tarea clase 4
+#def contenidoColumna(n_columna, tablero):
+#    columna=[]
+#    for fila in tablero:
+#        celda = fila[n_columna - 1]
+#        columna.append(celda)
+#    return columna
+
 def tableroVacio():
     return[
         [0, 0, 0, 0, 0, 0, 0],
@@ -62,7 +70,7 @@ def ganador(tablero):
         while j <= 3:
             if tablero[i][j] != 0 and tablero[i][j] == tablero[i][j+1] and tablero[i][j] == tablero[i][j+2] and tablero[i][j] == tablero[i][j+3]:
                 print("Gano el Jugador " + str(tablero[i][j])) 
-                sys.exit()
+                return 0
             else:
                 j += 1
         i -= 1
@@ -72,7 +80,7 @@ def ganador(tablero):
         while j >= 3:
             if tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i] and tablero[j][i] == tablero[j-2][i] and tablero[j][i] == tablero[j-3][i]:
                 print("Gano el Jugador " + str(tablero[j][i])) 
-                sys.exit()
+                return 0
             else:
                 j -= 1
         i += 1
@@ -88,7 +96,7 @@ def diagonal(tablero):
            while j >= 3:
                 if tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i+1] and tablero[j][i] == tablero[j-2][i+2] and tablero[j][i] == tablero[j-3][i+3]:
                     print("Gano el Jugador " + str(tablero[j][i])) 
-                    sys.exit()
+                    return 0
                 else:
                     j -= 1
                     i += 1
@@ -98,7 +106,7 @@ def diagonal(tablero):
             while j >= 3:
                 if tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i+1] and tablero[j][i] == tablero[j-2][i+2] and tablero[j][i] == tablero[j-3][i+3]:
                     print("Gano el Jugador " + str(tablero[j][i])) 
-                    sys.exit()
+                    return 0
                 else:
                     j -= 1
                     i += 1
@@ -108,7 +116,7 @@ def diagonal(tablero):
             while j >= 4:
                 if tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i+1] and tablero[j][i] == tablero[j-2][i+2] and tablero[j][i] == tablero[j-3][i+3]:
                     print("Gano el Jugador " + str(tablero[j][i])) 
-                    sys.exit()
+                    return 0
                 else:
                     j -= 1
                     i += 1
@@ -117,17 +125,17 @@ def diagonal(tablero):
             j=5
             if tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i+1] and tablero[j][i] == tablero[j-2][i+2] and tablero[j][i] == tablero[j-3][i+3]:
                 print("Gano el Jugador " + str(tablero[j][i])) 
-                sys.exit()
+                return 0
             elif tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i-1] and tablero[j][i] == tablero[j-2][i-2] and tablero[j][i] == tablero[j-3][i-3]:
               print("Gano el Jugador " + str(tablero[j][i])) 
-              sys.exit()
+              return 0
         elif r==4:
             i=r
             j=5
             while j >= 4:
                 if tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i-1] and tablero[j][i] == tablero[j-2][i-2] and tablero[j][i] == tablero[j-3][i-3]:
                     print("Gano el Jugador " + str(tablero[j][i])) 
-                    sys.exit()
+                    return 0
                 else:
                     j -= 1
                     i += 1
@@ -137,7 +145,7 @@ def diagonal(tablero):
             while j >= 3:
                 if tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i-1] and tablero[j][i] == tablero[j-2][i-2] and tablero[j][i] == tablero[j-3][i-3]:
                     print("Gano el Jugador " + str(tablero[j][i])) 
-                    sys.exit()
+                    return 0
                 else:
                     j -= 1
                     i -= 1
@@ -147,7 +155,7 @@ def diagonal(tablero):
             while j >= 3:
                 if tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i-1] and tablero[j][i] == tablero[j-2][i-2] and tablero[j][i] == tablero[j-3][i-3]:
                     print("Gano el Jugador " + str(tablero[j][i])) 
-                    sys.exit()
+                    return 0
                 else:
                     j -= 1
                     i -= 1
@@ -156,16 +164,16 @@ def diagonal(tablero):
     i=3
     if tablero[j][i] != 0 and tablero[j][i] == tablero[j+1][i+1] and tablero[j][i] == tablero[j+2][i+2] and tablero[j][i] == tablero[j+3][i+3]:
         print("Gano el Jugador " + str(tablero[j][i])) 
-        sys.exit()
+        return 0
     elif tablero[j][i] != 0 and tablero[j][i] == tablero[j+1][i-1] and tablero[j][i] == tablero[j+2][i-2] and tablero[j][i] == tablero[j+3][i-3]:
         print("Gano el Jugador " + str(tablero[j][i])) 
-        sys.exit()
+        return 0
     j=4
     i=0
     while j >= 3:
         if tablero[j][i] != 0 and tablero[j][i] == tablero[j-1][i+1] and tablero[j][i] == tablero[j-2][i+2] and tablero[j][i] == tablero[j3][i+3]:
             print("Gano el Jugador " + str(tablero[j][i])) 
-            sys.exit()
+            return 0
         else:
             i += 1
             j -= 1
@@ -174,7 +182,7 @@ def diagonal(tablero):
     while j >= 3:
         if tablero[j][i] != 0 and tablero[j][i] == tablero[j+1][i-1] and tablero[j][i] == tablero[j+2][i-2] and tablero[j][i] == tablero[j+3][i-3]:
             print("Gano el Jugador " + str(tablero[j][i])) 
-            sys.exit()
+            return 0
         else:
             i -= 1
             j -= 1
@@ -183,17 +191,18 @@ def diagonal(tablero):
 
 tablero = tableroVacio()
 secuencia = []
+i=1
 c=0
 f=0
-os.system('cls')
+
 #dibujarTablero (tablero)
-while 1 > 0:
+while i != 0:
     c = int(input("Ingrese columna: "))
     if len(secuencia)%2 == 0:
         f=1
     else:
         f=2
     SoltarFichaEnColumna(f,c,tablero,secuencia)
-    os.system('cls')
     tablero = dibujarTablero(completarTableroEnOrden(secuencia, tableroVacio()))
-    ganador(tablero)
+    # print(contenidoColumna(2, tablero))
+    i=ganador(tablero)
