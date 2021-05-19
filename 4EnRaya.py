@@ -185,12 +185,20 @@ def diagonal(tablero):
     
         
 # Tarea clase 4
-#def contenidoColumna(n_columna, tablero):
-#    columna=[]
-#    for fila in tablero:
-#        celda = fila[n_columna - 1]
-#        columna.append(celda)
-#    return columna
+def contenidoColumna(n_columna, tablero):
+    columna=[]
+    for fila in tablero:
+        celda = fila[n_columna - 1]
+        columna.append(celda)
+    return columna
+
+
+def contenidoFila(n_fila, tablero):
+  fila = []
+  for celda in tablero[n_fila-1]:
+    fila.append(celda)
+  return fila
+
 
 
 tablero = tableroVacio()
@@ -201,6 +209,8 @@ f=0
 os.system('cls')
 #dibujarTablero (tablero)
 while i != 0:
+    print(contenidoColumna(2, tablero))
+    print(contenidoFila(2, tablero))
     c = int(input("Ingrese columna: "))
     if len(secuencia)%2 == 0:
         f=1
@@ -209,5 +219,5 @@ while i != 0:
     SoltarFichaEnColumna(f,c,tablero,secuencia)
     tablero = dibujarTablero(completarTableroEnOrden(secuencia, tableroVacio()))
     i=ganador(tablero)
-    # print(contenidoColumna(2, tablero))
+
 
