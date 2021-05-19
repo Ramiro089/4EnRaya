@@ -1,13 +1,6 @@
 import os
 import sys
 
-# Tarea clase 4
-#def contenidoColumna(n_columna, tablero):
-#    columna=[]
-#    for fila in tablero:
-#        celda = fila[n_columna - 1]
-#        columna.append(celda)
-#    return columna
 
 def tableroVacio():
     return[
@@ -191,6 +184,14 @@ def diagonal(tablero):
             j -= 1
     
         
+# Tarea clase 4
+#def contenidoColumna(n_columna, tablero):
+#    columna=[]
+#    for fila in tablero:
+#        celda = fila[n_columna - 1]
+#        columna.append(celda)
+#    return columna
+
 
 tablero = tableroVacio()
 secuencia = []
