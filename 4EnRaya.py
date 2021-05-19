@@ -156,6 +156,7 @@ def diagonal(tablero):
                     j -= 1
                     i -= 1
         r += 1
+    # mas casos
     j=0
     i=3
     if tablero[j][i] != ' ' and tablero[j][i] == tablero[j+1][i+1] and tablero[j][i] == tablero[j+2][i+2] and tablero[j][i] == tablero[j+3][i+3]:
@@ -176,7 +177,7 @@ def diagonal(tablero):
     j=4
     i=6
     while j >= 3:
-        if tablero[j][i] != ' ' and tablero[j][i] == tablero[j+1][i-1] and tablero[j][i] == tablero[j+2][i-2] and tablero[j][i] == tablero[j+3][i-3]:
+        if tablero[j][i] != ' ' and tablero[j][i] == tablero[j-1][i-1] and tablero[j][i] == tablero[j-2][i-2] and tablero[j][i] == tablero[j-3][i-3]:
             print("Gano el Jugador " + str(tablero[j][i])) 
             return 0
         else:
