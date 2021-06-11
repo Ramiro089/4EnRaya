@@ -12,14 +12,14 @@ def tableroVacio():
         [' ', ' ', ' ', ' ', ' ', ' ', ' '],
     ]
 
-def SoltarFichaEnColumna(ficha, columna, tablero, secuncia):
+def SoltarFichaEnColumna(ficha, columna, tablero, secuencia):
     for fila in range(6, 0, -1):
         if columna > 7:
             os.system('cls')
             print ("Ingrese un numero entre 1-6")
             return 
         elif tablero [fila - 1][columna - 1] == ' ':
-            secuncia[len(secuencia):] = [columna]
+            secuencia[len(secuencia):] = [columna]
             #secuencia.append([columna])
             os.system('cls')
             return
