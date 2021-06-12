@@ -13,12 +13,17 @@ def tableroVacio():
     ]
 
 def SoltarFichaEnColumna(ficha, columna, tablero, secuencia):
-    for fila in range(6, 0, -1):
-        if columna > 7:
-            os.system('cls')
-            print ("Ingrese un numero entre 1-6")
-            return 
-        elif tablero [fila - 1][columna - 1] == ' ':
+
+    if columna > 7:
+        os.system('cls')
+        print ("Ingrese un numero entre 1-6")
+        return
+
+    if tablero [0][columna-1] != ' ':
+        return  print ("No hay espacios en esa columna, ingrese otra") 
+
+    for fila in range(6, 0, -1):    
+        if tablero [fila - 1][columna - 1] == ' ':
             secuencia[len(secuencia):] = [columna]
             #secuencia.append([columna])
             os.system('cls')
@@ -183,8 +188,14 @@ def diagonal(tablero):
         else:
             i -= 1
             j -= 1
+
+    return empate(tablero)
     
-        
+def empate(tablero):
+    if tablero [0][0] != ' ' and tablero [0][1] != ' ' and tablero [0][2] != ' ' and tablero [0][3] != ' ' and tablero [0][4] != ' ' and tablero [0][5] != ' ' :
+        print ("Empate")
+        return 0      
+
 # Tarea clase 4
 def contenidoColumna(n_columna, tablero):
     columna=[]
@@ -217,6 +228,7 @@ while i != 0:
         f=1
     else:
         f=2
+    os.system('cls')
     SoltarFichaEnColumna(f,c,tablero,secuencia)
     tablero = dibujarTablero(completarTableroEnOrden(secuencia, tableroVacio()))
     i=ganador(tablero)
