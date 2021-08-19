@@ -219,7 +219,7 @@ i=1
 c=0
 f=0
 os.system('cls')
-#dibujarTablero (tablero)
+# dibujarTablero (tablero)
 while i != 0:
     print(contenidoColumna(2, tablero))
     print(contenidoFila(2, tablero))
