@@ -2,4 +2,4 @@ language: python
 rvm:
   - "3.6"
 script:
-  - python -m py.test
+  - python -m py.test -s
